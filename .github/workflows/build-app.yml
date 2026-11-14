@@ -1,0 +1,20 @@
+name: Build server
+on:
+  workflow_dispatch:
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: 8.0.x
+      - name: Remove version check
+        run: sed -i 's/if (message.ClientVersion != GameVersion)/if (false)/' src/Supercell.Laser.Server/Message/MessageManager.cs
+      - name: Publish
+        run: dotnet publish src/Supercell.Laser.Server/Supercell.Laser.Server.csproj -c Release -o out
+      - uses: actions/upload-artifact@v4
+        with:
+          name: Server
+          path: out
+          retention-days: 90
