@@ -2708,7 +2708,7 @@ namespace Supercell.Laser.Server.Message
                 return;
             }
 
-            string GameVersion = "29.270";
+            string GameVersion = "29.258";
 
             if (message.ClientVersion != GameVersion)
             {
