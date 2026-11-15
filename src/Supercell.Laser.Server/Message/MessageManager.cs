@@ -2710,7 +2710,7 @@ namespace Supercell.Laser.Server.Message
 
             string GameVersion = "29.258";
 
-            if (message.ClientVersion != GameVersion)
+            if (false)
             {
                 AuthenticationFailedMessage loginFailed = new AuthenticationFailedMessage();
                 loginFailed.ErrorCode = 8;
