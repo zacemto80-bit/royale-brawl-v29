@@ -903,7 +903,7 @@ namespace Supercell.Laser.Logic.Home
 
             encoder.WriteVInt(1); // BrawlPassSeasonData
             {
-                encoder.WriteVInt(2); //season id
+                encoder.WriteVInt(1); //season id
                 encoder.WriteVInt(BrawlPassTokens); //collected tokens
                 //encoder.WriteVInt(PremiumPassProgress);
                 encoder.WriteBoolean(HasPremiumPass); //is purchased
